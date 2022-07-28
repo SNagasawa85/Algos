@@ -82,3 +82,4 @@ function orderedMultisetUnion(sortedA, sortedB) {
 
 console.log(orderedMultisetUnion(nums5A, nums5B));
 console.log(orderedMultisetUnion(nums1A, nums1B));
+console.log(orderedMultisetUnion(nums2A, nums2B));

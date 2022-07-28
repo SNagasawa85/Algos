@@ -19,7 +19,5 @@ function toBinary(val) {
     return binVal;
 }
 
-console.log(toBinary(29));
-console.log(toBinary(145));
-console.log(toBinary(128));
-console.log(toBinary(3258745875415896));
+console.log(toBinary(14));
+

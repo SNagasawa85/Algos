@@ -19,6 +19,19 @@ const nums3 = [3, 8, 4, 1, 9, 0, -2];
 const targetSum3 = 6;
 const expected3 = [1, 6];
 
+function twoSumBrute(nums, targetSum){
+    for(var i = 0; i < nums.length; i++){
+        for(var j = 0; j < nums.length; j++){
+            if(nums[i] + nums[j] === targetSum){
+                if(i === j){
+                    continue;
+                }
+                return [i, j];
+            }
+        }
+    }
+}
+
 
 /**
  * Finds the indexes of the nums that add up to the given target sum.
@@ -47,6 +60,8 @@ function twoSum(nums, targetSum) {
     }
 }
 
-console.log(twoSum(nums1, targetSum1));
-console.log(twoSum(nums2, targetSum2));
-console.log(twoSum(nums3, targetSum3));
+// console.log(twoSum(nums1, targetSum1));
+// console.log(twoSum(nums2, targetSum2));
+// console.log(twoSum(nums3, targetSum3));
+
+console.log(twoSumBrute(nums2, targetSum2));
