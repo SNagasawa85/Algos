@@ -30,5 +30,63 @@ const expected4 = 2;
  * @returns {number} Representing the max area of a container.
  */
 function containerWithMostWater(heights) {
-    
+    let maxArea = 0;
+    for(var i = 0; i < heights.length; i++){
+        let j = i + 1;
+        while(j < heights.length){
+            if(heights[i] < heights[j]){
+                let tempArea = heights[i] * (j-i);
+                if(tempArea > maxArea){
+                    maxArea = tempArea;
+                }
+                j++;
+            } else {
+                let tempArea = heights[j] * (j-i);
+                if(tempArea > maxArea){
+                    maxArea = tempArea;
+                }
+                j++;
+            }
+        }
+    }
+    return maxArea;
 }
+
+// console.log(containerWithMostWater(heights1));
+// console.log(containerWithMostWater(heights2));
+// console.log(containerWithMostWater(heights3));
+// console.log(containerWithMostWater(heights4));
+
+function efficientContainer (heights) {
+    let i = 0;
+    let j = heights.length - 1;
+    let maxArea = 0;
+    while(i< j){
+        if(heights[i] < heights[j]){
+            let tempArea = heights[i] * (j-i);
+            if(tempArea > maxArea){
+                maxArea = tempArea;
+            }
+            i++;
+        } 
+        else if(heights[j] < heights[i]){
+            let tempArea = heights[j] * (j-i);
+            if(tempArea > maxArea){
+                maxArea = tempArea;
+            }
+            j--;
+        } else {
+            let tempArea = heights[i] * (j-i);
+            if(tempArea > maxArea){
+                maxArea = tempArea;
+            }
+            i++;
+        }
+    }
+    return maxArea;
+}
+
+console.log(efficientContainer(heights1));
+console.log(efficientContainer(heights2));
+console.log(efficientContainer(heights3));
+console.log(efficientContainer(heights4));
